@@ -1,0 +1,22 @@
+
+
+winpty docker build -t albertflynn/bmi:v1 .
+
+winpty docker run -it --rm -p 8085:8000 --name bmiapp albertflynn/bmi:v1
+
+winpty docker login --username=albertflynn
+
+winpty docker tag albertflynn/bmi:v1 albertflynn/bmi:v1
+
+winpty docker push albertflynn/bmi:v1
+
+
+
+winpty docker login -u "albertflynn" -p "#Bert8411#" docker.io
+
+winpty docker pull albertflynn/bmi:v1
+
+winpty docker run -d --rm -p 8085:8000 --name bmiapp albertflynn/bmi:v1
+
+curl http://localhost:8050
+
